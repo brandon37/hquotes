@@ -27,6 +27,7 @@ mysql_select_db($BD, $conexion) or die(mysql_error($conexion));
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $email;
 	$_SESSION['pass']    = $pass;
+	$_SESSION["aut"]  = 1;
 
 	header("Location: Admin/starter.php");
 	}else{

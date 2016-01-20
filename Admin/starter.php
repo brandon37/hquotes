@@ -1,7 +1,12 @@
-<?php 
-session_start();
-
- ?>
+<?php
+  session_start();
+  if ((!isset($_SESSION['email'])) && (!isset($_SESSION['pass']))) {
+  } else {
+    if ($_SESSION["aut"] != 1) {
+      header("location: ../index.html");
+    }
+  }
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -206,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="close.php" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
